@@ -1,26 +1,36 @@
-import React from 'react';
-import { FiArrowUp } from 'react-icons/fi'; // Importing the icon from react-icons
+import React from "react";
 
-const ChatInput: React.FC = () => {
+export default function ChatInput() {
     return (
-        <div className="relative w-[800px] h-[200px] bg-white p-4 rounded-lg shadow-md mt-4">
-            <div className="relative h-full">
-                <textarea
-                    className="w-full h-full p-2 focus:outline-none focus:ring-2 focus:ring-purple-600 bg-transparent border-none resize-none"
-                    placeholder="Who is the principal of the college?"
-                ></textarea>
-                <button className="absolute top-2 right-2 flex items-center bg-blue-600 text-white p-2 rounded-md">
-                    <FiArrowUp className="h-5 w-5" />
-                </button>
-                <div className="absolute bottom-2 left-2 text-gray-300 text-xs pointer-events-none">
-                    MVLUBOT 0.1 (Beta)
+        <div className="container mx-auto max-w-[720px] px-4 md:px-0 flex justify-center items-center">
+            <div className=" bg-white w-full  mt-10 px-6 py-4 rounded-2xl focus-within:shadow-2xl transition-shadow ease-in duration-150 ">
+                <div className="flex min-h-32">
+                    <textarea
+                        className="grow focus:outline-none resize-none text-sm"
+                        placeholder="Enter your query here."
+                    ></textarea>
+                    <button className=" h-7 aspect-square flex justify-center items-center rounded bg-[#29166F]">
+                        <svg
+                            width="12"
+                            height="15"
+                            viewBox="0 0 12 15"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="M6.82379 1.22059C6.60504 1.00211 6.30852 0.879395 5.99935 0.879395C5.69018 0.879395 5.39365 1.00211 5.1749 1.22059L0.773459 5.6197C0.554596 5.83856 0.431641 6.13541 0.431641 6.44492C0.431641 6.75444 0.554596 7.05128 0.773459 7.27015C0.992322 7.48901 1.28916 7.61196 1.59868 7.61196C1.9082 7.61196 2.20504 7.48901 2.4239 7.27015L4.83268 4.86215V13.8338C4.83268 14.1432 4.9556 14.44 5.17439 14.6588C5.39318 14.8776 5.68993 15.0005 5.99935 15.0005C6.30877 15.0005 6.60551 14.8776 6.82431 14.6588C7.0431 14.44 7.16602 14.1432 7.16602 13.8338V4.86215L9.57402 7.27015C9.68239 7.37852 9.81104 7.46448 9.95263 7.52313C10.0942 7.58178 10.246 7.61196 10.3992 7.61196C10.5525 7.61196 10.7043 7.58178 10.8458 7.52313C10.9874 7.46448 11.1161 7.37852 11.2245 7.27015C11.3328 7.16178 11.4188 7.03312 11.4774 6.89153C11.5361 6.74994 11.5663 6.59818 11.5663 6.44492C11.5663 6.29167 11.5361 6.13991 11.4774 5.99832C11.4188 5.85673 11.3328 5.72807 11.2245 5.6197L6.82379 1.22059Z"
+                                fill="white"
+                            />
+                        </svg>
+                    </button>
                 </div>
-                <div className="absolute bottom-2 right-14 text-gray-300 text-xs pointer-events-none">
-                    Use shift + return for new line
+                <div className="text-xs text-[#9A9A9A] flex justify-between">
+                    <h4>MVLUBot 0.1 (Beta)</h4>
+                    <p className="hidden md:inline-block">
+                        Use <code className="px-2">shift + return</code>for new line
+                    </p>
                 </div>
             </div>
         </div>
     );
 };
-
-export default ChatInput;

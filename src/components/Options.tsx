@@ -1,33 +1,44 @@
 import React from 'react';
-import { FaBook, FaGraduationCap, FaRegClipboard, FaBriefcase } from 'react-icons/fa';
 
-const options = [
-    { label: "Course Registration Help", icon: <FaRegClipboard className="text-orange-500 text-4xl mb-2" /> },
-    { label: "Internship Opportunities", icon: <FaBriefcase className="text-orange-500 text-4xl mb-2" /> },
-    { label: "Library Resources", icon: <FaBook className="text-pink-500 text-4xl mb-2" /> },
-    { label: "Graduation Requirements", icon: <FaGraduationCap className="text-orange-500 text-4xl mb-2" /> },
-];
 
-const Options: React.FC = () => {
+
+export default function Options() {
     return (
-        <div className="flex flex-col  mt-8">
-            <div className="flex items-start mb-4">
-                <FaRegClipboard className="text-blue-500 text-2xl mr-2" />
-                <span className="text-lg text-gray-700 font-semibold">Get Started</span>
+
+        <div className="container mx-auto max-w-[720px] px-4 md:px-0 justify-center items-center mt-12">
+            <div className='flex '>
+                <div className="flex">
+                    <img className="w-[24px] h-[24px]" src="./public/img.svg" alt="" />
+                    <p className='px-2' >Get Started</p>
+                </div>
             </div>
-            <div className="flex flex-wrap justify-center gap-4">
-                {options.map(option => (
-                    <div
-                        key={option.label}
-                        className="bg-white border border-gray-200 rounded-md p-4 flex flex-col items-start w-48 shadow hover:shadow-lg transition-shadow"
-                    >
-                        {option.icon}
-                        <p className="text-gray-800 text-lg font-semibold">{option.label}</p>
+
+            <div className="container mx-auto max-w-[720px] gap-x-[16px] px-4 md:px-0 flex justify-center items-center mt-6">
+                <div className="w-[168px]  h-[100px] p-4 rounded-lg bg-white">
+                    <div className='w-[136px] h-[68px]'>
+                        <img className="w-[24px] h-[24px]" src="./public/image1.png" alt="image1" />
+                        <p className='font-semibold text-xs mt-3'>Course Resgrisation Help</p>
                     </div>
-                ))}
+                </div>
+                <div className=" w-[168px]  h-[100px] p-4 rounded-lg bg-white">
+                    <div className="w-[136px] h-[68px]">
+                        <img className="w-[24px] h-[24px]" src="./public/image2.png" alt="image2" />
+                        <p className='font-semibold text-xs mt-3' >Internship Opportunities</p>
+                    </div>
+                </div>
+                <div className=" w-[168px]  h-[100px] p-4 rounded-lg bg-white">
+                    <div className="w-[136px] h-[68px]">
+                        <img className="w-[24px] h-[24px]" src="./public/image3.png" alt="image3" />
+                        <p className='font-semibold text-xs mt-3'>Library Resources</p>
+                    </div>
+                </div>
+                <div className=" w-[168px]  h-[100px] p-4 rounded-lg bg-white">
+                    <div className="w-[136px] h-[68px]">
+                        <img className="w-[24px] h-[24px]" src="./public/image4.png" alt="image4" />
+                        <p className='font-semibold text-xs mt-3'>Graduation Requirement </p>
+                    </div>
+                </div>
             </div>
         </div>
     );
 };
-
-export default Options;
