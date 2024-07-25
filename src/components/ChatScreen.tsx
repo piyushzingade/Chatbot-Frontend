@@ -1,19 +1,27 @@
+import React from 'react';
 
-export default function ChatScreen(){
+export default function ChatScreen() {
     return (
-        <div className=" mx-auto max-w-[720px] px-4 md:px-0 justify-center items-center mt-12">
+        <div className="mx-auto max-w-[720px] px-4 md:px-0 justify-center items-center mt-12">
             <ChatUser image="./ChatscreenUser.png" title="Who is the principal of the college?" />
             <ChatBot image="./ChatScreenLogo.png" title="To find out who the principal of a specific college is, you would typically need to check the official website of the college or contact the college directly through their official communication channels (such as email or phone). If you have a specific college in mind, I can assist you with general steps on how to find this information online or through official channels." />
             <ChatUser image="./ChatscreenUser.png" title="Who is the principal of the college?" />
             <ChatBot image="./ChatScreenLogo.png" title="To find out who the principal of a specific college is, you would typically need to check the official website of the college or contact the college directly through their official communication channels (such as email or phone). If you have a specific college in mind, I can assist you with general steps on how to find this information online or through official channels." />
             <ChatUser image="./ChatscreenUser.png" title="Who is the principal of the college?" />
 
-            <div className="flex bg-white justify-center items-center align-middle rounded-lg p-2 h-11">
+            <div className="bg-[#FDEDED] flex justify-start m-5 h-12">
+                <img className='h-5 w-5 m-2' src="./Alert.png" alt="" />
+                <div className="m-2">
+                    <p>An unexpected error occurred. Please try again later.</p>
+                </div>
+            </div>
+
+            <div className="flex bg-white justify-center items-center align-middle rounded-xl p-2 h-11 m-5 mt-16 ">
                 <textarea
                     className="grow focus:outline-none resize-none text-sm"
                     placeholder="Enter your query here."
                 ></textarea>
-                <button className=" h-7 aspect-square flex justify-center items-center rounded bg-[#29166F]">
+                <button className="h-7 aspect-square flex justify-center items-center rounded bg-[#29166F]">
                     <svg
                         width="12"
                         height="15"
@@ -28,12 +36,8 @@ export default function ChatScreen(){
                     </svg>
                 </button>
             </div>
-            <div className="">
-
-            </div>
-                <img src="" alt="" />
         </div>
-    )
+    );
 }
 
 export interface ChatProps {
@@ -44,24 +48,23 @@ export interface ChatProps {
 export function ChatUser(props: ChatProps) {
     const { image, title } = props;
     return (
-        <div className="flex justify-start m-2 items-start bg-white w-96 rounded-lg">
+        <div className="flex justify-start m-5 items-start bg-white w-96 rounded-lg">
             <img className="w-9 h-9 m-2" src={image} alt="" />
-            <div className="">
+            <div>
                 <p className="m-2">{title}</p>
             </div>
         </div>
-       
-    )
+    );
 }
 
 export function ChatBot(props: ChatProps) {
     const { image, title } = props;
     return (
-        <div className="flex justify-center items-start bg-gradient-to-r from-[#29166F] to-[#6E52D8] rounded-lg" >
-            <img className="w-9 h-9 m-2 " src={image} alt="" />
-            <div className="">
+        <div className="flex justify-start items-start m-5 bg-gradient-to-r from-[#29166F] to-[#6E52D8] rounded-lg">
+            <img className="w-9 h-9 m-2" src={image} alt="" />
+            <div>
                 <p className="m-2 text-white text-sm">{title}</p>
             </div>
         </div>
-    )
+    );
 }
